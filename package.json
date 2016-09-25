@@ -1,0 +1,35 @@
+{
+  "name": "flickr-notification",
+  "version": "1.0.0",
+  "description": "flickr notification module",
+  "main": "./lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "crypto": "0.0.3",
+    "extend": "^3.0.0",
+    "flickrapi": "^0.4.2",
+    "fs": "0.0.2",
+    "https": "^1.0.0",
+    "node-schedule": "^1.1.0",
+    "path": "^0.12.7",
+    "pg": "^6.0.1",
+    "request": "^2.75.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zingorn/flickr-notification.git"
+  },
+  "keywords": [
+    "Flickr",
+    "Notification"
+  ],
+  "author": "Zingorn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zingorn/flickr-notification/issues"
+  },
+  "homepage": "https://github.com/zingorn/flickr-notification#readme"
+}
