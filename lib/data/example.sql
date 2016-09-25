@@ -20,9 +20,9 @@ BEGIN
     value JSONB
   );
 
-  INSERT INTO account (options) VALUES
+  INSERT INTO account (account_id, options) VALUES
     -- replace above
-    ('{
+    (1, '{
     api: {
         api_key: "...",
         secret: "...",
@@ -45,12 +45,12 @@ BEGIN
     -- replace below
   ON CONFLICT DO NOTHING;
 
-  INSERT INTO topics (privacy_filter, last_id, topic, name) VALUES
-    (1, 0, 'UNIQ_GUID', 'Public'),
-    (2, 0, 'UNIQ_GUID', 'Friends only'),
-    (3, 0, 'UNIQ_GUID', 'Family only'),
-    (4, 0, 'UNIQ_GUID', 'Friends and Family'),
-    (5, 0, 'UNIQ_GUID', 'Private')
+  INSERT INTO topics (topic_id, privacy_filter, account_id, last_id, topic, name) VALUES
+    (1, 1, 1, 0, 'UNIQ_GUID', 'Public'),
+    (2, 2, 1, 0, 'UNIQ_GUID', 'Friends only'),
+    (3, 3, 1, 0, 'UNIQ_GUID', 'Family only'),
+    (4, 4, 1, 0, 'UNIQ_GUID', 'Friends and Family'),
+    (5, 5, 1, 0, 'UNIQ_GUID', 'Private')
   ON CONFLICT DO NOTHING;
 
   insert INTO info (name, value) VALUES
