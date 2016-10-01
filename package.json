@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "async": "^2.0.1",
-    "config": "^1.21.0",
     "crypto": "0.0.3",
     "extend": "^3.0.0",
     "flickrapi": "^0.4.2",
