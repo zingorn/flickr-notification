@@ -4,7 +4,8 @@ BEGIN
 
   CREATE TABLE IF NOT EXISTS account(
     account_id SERIAL PRIMARY KEY not null,
-    options TEXT
+    options TEXT,
+    name VARCHAR(255)
   );
 
   CREATE TABLE IF NOT EXISTS topics(
@@ -20,7 +21,7 @@ BEGIN
     value JSONB
   );
 
-  INSERT INTO account (account_id, options) VALUES
+  INSERT INTO account (account_id, options, name) VALUES
     -- replace above
     (1, '{
     api: {
@@ -41,7 +42,7 @@ BEGIN
     gcm: {
         authorization: "key=..."
     }
-}')
+}', 'example')
     -- replace below
   ON CONFLICT DO NOTHING;
 
