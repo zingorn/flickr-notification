@@ -13,7 +13,7 @@ BEGIN
     privacy_filter INT,
     account_id INT REFERENCES account (account_id),
     last_id BIGINT,
-    topic VARCHAR(40) UNIQUE ,
+    topic TEXT,
     name VARCHAR(255));
 
   CREATE TABLE IF NOT EXISTS info(
@@ -50,13 +50,14 @@ BEGIN
     (1, 1, 1, 0, 'UNIQ_GUID', 'Public'),
     (2, 2, 1, 0, 'UNIQ_GUID', 'Friends only'),
     (3, 3, 1, 0, 'UNIQ_GUID', 'Family only'),
-    (4, 4, 1, 0, 'UNIQ_GUID', 'Friends and Family'),
+    (4, 4, 1, 0, 'UNIQ_GUID,UNIQ_GUID', 'Friends and Family'),
     (5, 5, 1, 0, 'UNIQ_GUID', 'Private')
   ON CONFLICT DO NOTHING;
 
   insert INTO info (name, value) VALUES
     ('last_update', null),
-    ('last_parse', null)
+    ('last_parse', null),
+    ('version', null)
   ON CONFLICT DO NOTHING;
 
 END
